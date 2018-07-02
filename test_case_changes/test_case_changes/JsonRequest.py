@@ -7,7 +7,6 @@ import xml.etree.ElementTree as ET
 
 import credentials
 
-
 LOGIN = credentials.get_login()
 PASSWORD = credentials.get_password()
 
