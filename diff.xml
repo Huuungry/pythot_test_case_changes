@@ -7,6 +7,9 @@
       <entry key="Default">
         <PlaceSettings />
       </entry>
+      <entry key="DirDiff">
+        <PlaceSettings />
+      </entry>
     </option>
   </component>
   <component name="TextDiffSettings">
@@ -25,6 +28,9 @@
         <PlaceSettings>
           <option name="HIGHLIGHT_POLICY" value="BY_LINE" />
         </PlaceSettings>
+      </entry>
+      <entry key="DirDiff">
+        <PlaceSettings />
       </entry>
     </option>
   </component>
