@@ -11,5 +11,5 @@ def detail(request):
 
 def response(request):
     # response = "Your Test Case ID is %s and Revision is %s." % (request.GET['id'], request.GET['revision'])
-    response = test_case_changes.JsonRequest.difference(request.GET['id'],request.GET['revision'])
+    response = test_case_changes.JsonRequest.parse_xml(request.GET['id'],request.GET['revision'])
     return HttpResponse(response)

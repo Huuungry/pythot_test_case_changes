@@ -25,19 +25,26 @@ def get_json_response(test_case_id, test_case_rev):
     return json_response
 
 def parse_json(test_case_id, test_case_rev):
-    steps_xml = ""
     parsed_lib = json.loads(get_json_response(test_case_id, test_case_rev))
-    steps_html = parsed_lib['fields']['Microsoft.VSTS.TCM.Steps']
+    steps_xml = parsed_lib['fields']['Microsoft.VSTS.TCM.Steps']
     return steps_xml
 
-def parse_xml():
-    steps_html = ""
-    return steps_html
+def parse_xml(test_case_id, test_case_rev):
+    document = minidom.parseString(parse_json(test_case_id, test_case_rev))
+    steps = document.getElementsByTagName("step")
+    html = ''
+    i=0
+    for step in steps:
+        i=i+1
+        parstring = step.getElementsByTagName("parameterizedString")
+        #print("Step%s Action:%s Expected result:%s " % (str(i),parstring[0].firstChild.data,parstring[1].firstChild.data))
+        html = html+("Step%s Action:%s Expected result:%s " % (str(i),parstring[0].firstChild.data,parstring[1].firstChild.data))
+    return html
 
 def difference(test_case_id, test_case_rev):
     diff_html = "ToDO"
     return diff_html
 
 # print(parse_json(get_json_response(get_json_URL(test_case_id,test_case_rev))))
-
 # difference(test_case_id, test_case_rev)
+# print(parse_xml(test_case_id, test_case_rev))
