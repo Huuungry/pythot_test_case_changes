@@ -5,12 +5,12 @@ import json
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
 
-import credentials
+import test_case_changes.credentials
 
-LOGIN = credentials.get_login()
-PASSWORD = credentials.get_password()
+LOGIN = test_case_changes.credentials.get_login()
+PASSWORD = test_case_changes.credentials.get_password()
 
-json_response = ""
+json_response = "test"
 test_case_id = "446114"
 test_case_rev = "18"
 
@@ -35,7 +35,7 @@ def parse_xml():
     return steps_html
 
 def difference(test_case_id, test_case_rev):
-    diff_html = ""
+    diff_html = "ToDO"
     return diff_html
 
 # print(parse_json(get_json_response(get_json_URL(test_case_id,test_case_rev))))
