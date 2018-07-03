@@ -25,9 +25,10 @@ def get_json_response(test_case_id, test_case_rev):
     return json_response
 
 def parse_json(test_case_id, test_case_rev):
+    steps_xml = ""
     parsed_lib = json.loads(get_json_response(test_case_id, test_case_rev))
     steps_html = parsed_lib['fields']['Microsoft.VSTS.TCM.Steps']
-    return steps_html
+    return steps_xml
 
 def parse_xml():
     steps_html = ""
