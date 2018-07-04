@@ -5,13 +5,14 @@ import json
 import bs4
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
+import test_case_changes.credentials
 
-import credentials
+from lxml.html.diff import htmldiff
 
-from test_case_changes.test_case_changes import credentials
+# from test_case_changes.test_case_changes import credentials
 
-LOGIN = credentials.get_login()
-PASSWORD = credentials.get_password()
+LOGIN = test_case_changes.credentials.get_login()
+PASSWORD = test_case_changes.credentials.get_password()
 
 json_response = "test"
 test_case_id = "446114"
@@ -56,7 +57,18 @@ def difference(test_case_id, test_case_rev):
     diff_html = difflib.HtmlDiff().make_file(new, old)
     return diff_html
 
+def difference2(test_case_id, test_case_rev):
+    old = parse_xml(test_case_id, str((int(test_case_rev) - 1)))
+    new =parse_xml(test_case_id, test_case_rev)
+    diff_html=htmldiff(old, new)
+    diff_html=diff_html.replace("<del>","<del><font color=red>")
+    diff_html=diff_html.replace("</del>","</del></font>")
+    diff_html=diff_html.replace("<ins>","<ins><font color=green>")
+    diff_html=diff_html.replace("</ins>","</ins></font>")
+    return diff_html
+
+
 # print(parse_json(get_json_response(get_json_URL(test_case_id,test_case_rev))))
 # difference(test_case_id, test_case_rev)
 # print(parse_xml(test_case_id, test_case_rev))
-print( difference(test_case_id, test_case_rev))
+# print( difference(test_case_id, test_case_rev))
