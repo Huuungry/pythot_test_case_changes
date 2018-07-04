@@ -53,7 +53,7 @@ def parse_html(test_case_id, test_case_rev):
 def difference(test_case_id, test_case_rev):
     old = parse_html(test_case_id, str((int(test_case_rev) - 1))).splitlines()
     new = parse_html(test_case_id, test_case_rev).splitlines()
-    diff_html = difflib.HtmlDiff().make_file(old, new)
+    diff_html = difflib.HtmlDiff().make_file(new, old)
     return diff_html
 
 # print(parse_json(get_json_response(get_json_URL(test_case_id,test_case_rev))))
