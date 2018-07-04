@@ -14,6 +14,7 @@ from lxml.html.diff import htmldiff
 LOGIN = test_case_changes.credentials.get_login()
 PASSWORD = test_case_changes.credentials.get_password()
 
+
 json_response = "test"
 test_case_id = "446114"
 test_case_rev = "18"
@@ -43,7 +44,7 @@ def parse_xml(test_case_id, test_case_rev):
         parstring = step.getElementsByTagName("parameterizedString")
         #print("Step%s Action:%s Expected result:%s " % (str(i),parstring[0].firstChild.data,parstring[1].firstChild.data))
         #html = html+("Step%s Action:%s Expected result:%s " % (str(i),parstring[0].firstChild.data,parstring[1].firstChild.data))
-        html = html + ("<DIV><b>Step %s</b><DIV><b> Description: </b>%s</DIV><DIV><b> Expected result: </b>%s</DIV></DIV>\n"
+        html = html + ("<form><DIV><b>Step %s</b><DIV><b> Description: </b>%s</DIV><DIV><b> Expected result: </b>%s</DIV></DIV></form>\n"
                        % (str(i), parstring[0].firstChild.data, parstring[1].firstChild.data))
     return html
 
