@@ -2,13 +2,16 @@ from requests_ntlm import HttpNtlmAuth
 import difflib
 import requests
 import json
+import bs4
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
 
-import test_case_changes.credentials
+import credentials
 
-LOGIN = test_case_changes.credentials.get_login()
-PASSWORD = test_case_changes.credentials.get_password()
+from test_case_changes.test_case_changes import credentials
+
+LOGIN = credentials.get_login()
+PASSWORD = credentials.get_password()
 
 json_response = "test"
 test_case_id = "446114"
@@ -39,13 +42,17 @@ def parse_xml(test_case_id, test_case_rev):
         parstring = step.getElementsByTagName("parameterizedString")
         #print("Step%s Action:%s Expected result:%s " % (str(i),parstring[0].firstChild.data,parstring[1].firstChild.data))
         #html = html+("Step%s Action:%s Expected result:%s " % (str(i),parstring[0].firstChild.data,parstring[1].firstChild.data))
-        html = html + ("<DIV><b>Step %s</b><DIV><b>Description:</b>%s</DIV><DIV><b>Expected result:</b>%s</DIV></DIV>"
+        html = html + ("<DIV><b>Step %s</b><DIV><b> Description: </b>%s</DIV><DIV><b> Expected result: </b>%s</DIV></DIV>\n"
                        % (str(i), parstring[0].firstChild.data, parstring[1].firstChild.data))
     return html
 
+def parse_html(test_case_id, test_case_rev):
+    soup = bs4.BeautifulSoup(parse_xml(test_case_id, test_case_rev), "html.parser")
+    return soup.text
+
 def difference(test_case_id, test_case_rev):
-    old = parse_xml(test_case_id, str((int(test_case_rev) - 1))).splitlines()
-    new = parse_xml(test_case_id, test_case_rev).splitlines()
+    old = parse_html(test_case_id, str((int(test_case_rev) - 1))).splitlines()
+    new = parse_html(test_case_id, test_case_rev).splitlines()
     diff_html = difflib.HtmlDiff().make_file(old, new)
     return diff_html
 
