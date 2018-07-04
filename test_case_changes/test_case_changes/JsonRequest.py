@@ -29,6 +29,23 @@ def get_json_response(test_case_id, test_case_rev):
     json_response = r.content.decode('utf-8')
     return json_response
 
+def get_t_c_data(test_case_id, test_case_rev):
+    parsed_t_c_id = json.loads(get_json_response(test_case_id, test_case_rev))
+    t_c_id = parsed_t_c_id['id']
+    t_c_rev = parsed_t_c_id['rev']
+    t_c_name = parsed_t_c_id['fields']['System.Title']
+    t_c_state = parsed_t_c_id['fields']['System.State']
+    return t_c_id, t_c_rev, t_c_name, t_c_state
+
+def get_t_c_id(test_case_id, test_case_rev):
+    return get_t_c_data(test_case_id, test_case_rev)[0]
+def get_t_c_rev(test_case_id, test_case_rev):
+    return get_t_c_data(test_case_id, test_case_rev)[1]
+def get_t_c_name(test_case_id, test_case_rev):
+    return get_t_c_data(test_case_id, test_case_rev)[2]
+def get_t_c_state(test_case_id, test_case_rev):
+    return get_t_c_data(test_case_id, test_case_rev)[3]
+
 def parse_json(test_case_id, test_case_rev):
     parsed_lib = json.loads(get_json_response(test_case_id, test_case_rev))
     steps_xml = parsed_lib['fields']['Microsoft.VSTS.TCM.Steps']
@@ -50,13 +67,19 @@ def parse_xml(test_case_id, test_case_rev):
 
 def parse_html(test_case_id, test_case_rev):
     soup = bs4.BeautifulSoup(parse_xml(test_case_id, test_case_rev), "html.parser")
-    return soup.text
+    #results = {} TOOODOOOOO
+
+    return soup.get_text(separator=" ")
 
 def difference(test_case_id, test_case_rev):
     old = parse_html(test_case_id, str((int(test_case_rev) - 1))).splitlines()
     new = parse_html(test_case_id, test_case_rev).splitlines()
-    diff_html = difflib.HtmlDiff().make_file(new, old)
-    return diff_html
+
+    #print (old, new)
+    diff_html = difflib.HtmlDiff().make_file(old, new, fromdesc='T-C %sRevision %s'%(test_case_id, str((int(test_case_rev) - 1))), todesc='T-C %sRevision %s'%(test_case_id, test_case_rev))
+    diff_html = diff_html.replace('&nbsp; ','&nbsp;')
+    diff_html = diff_html.replace('  &nbsp;', '&nbsp;')
+    return diff_html.replace(' &nbsp;', '&nbsp;')
 
 def difference2(test_case_id, test_case_rev):
     old = parse_xml(test_case_id, str((int(test_case_rev) - 1)))
@@ -70,6 +93,11 @@ def difference2(test_case_id, test_case_rev):
 
 
 # print(parse_json(get_json_response(get_json_URL(test_case_id,test_case_rev))))
-# difference(test_case_id, test_case_rev)
-# print(parse_xml(test_case_id, test_case_rev))
+
+#print(parse_xml(test_case_id, test_case_rev))
 # print( difference(test_case_id, test_case_rev))
+#difference(test_case_id, test_case_rev)
+print(get_t_c_id(test_case_id, test_case_rev))
+print(get_t_c_rev(test_case_id, test_case_rev))
+print(get_t_c_name(test_case_id, test_case_rev))
+print(get_t_c_state(test_case_id, test_case_rev))
