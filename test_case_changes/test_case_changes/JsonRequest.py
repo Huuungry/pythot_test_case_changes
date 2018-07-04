@@ -15,10 +15,6 @@ LOGIN = test_case_changes.credentials.get_login()
 PASSWORD = test_case_changes.credentials.get_password()
 
 
-json_response = "test"
-test_case_id = "446114"
-test_case_rev = "18"
-
 def get_json_URL(test_case_id, test_case_rev):
     json_URL = "http://tfs:8080/tfs/IMPT/_apis/wit/workitems/" + test_case_id + "/revisions/" + test_case_rev + "?v_5"
     return json_URL
@@ -90,14 +86,3 @@ def difference2(test_case_id, test_case_rev):
     diff_html=diff_html.replace("<ins>","<ins><font color=green>")
     diff_html=diff_html.replace("</ins>","</ins></font>")
     return diff_html
-
-
-# print(parse_json(get_json_response(get_json_URL(test_case_id,test_case_rev))))
-
-#print(parse_xml(test_case_id, test_case_rev))
-# print( difference(test_case_id, test_case_rev))
-#difference(test_case_id, test_case_rev)
-print(get_t_c_id(test_case_id, test_case_rev))
-print(get_t_c_rev(test_case_id, test_case_rev))
-print(get_t_c_name(test_case_id, test_case_rev))
-print(get_t_c_state(test_case_id, test_case_rev))
