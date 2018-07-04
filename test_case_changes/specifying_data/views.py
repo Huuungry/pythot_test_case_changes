@@ -11,5 +11,6 @@ def detail(request):
 
 def response(request):
     # response = "Your Test Case ID is %s and Revision is %s." % (request.GET['id'], request.GET['revision'])
-    response = test_case_changes.JsonRequest.parse_xml(request.GET['id'],request.GET['revision'])
+    response = loader.get_template('test_case_change/style_template.html').render() \
+               + test_case_changes.JsonRequest.difference2(request.GET['id'],request.GET['revision'])+"</body></html>"
     return HttpResponse(response)
