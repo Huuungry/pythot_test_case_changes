@@ -38,13 +38,18 @@ def parse_xml(test_case_id, test_case_rev):
         i=i+1
         parstring = step.getElementsByTagName("parameterizedString")
         #print("Step%s Action:%s Expected result:%s " % (str(i),parstring[0].firstChild.data,parstring[1].firstChild.data))
-        html = html+("Step%s Action:%s Expected result:%s " % (str(i),parstring[0].firstChild.data,parstring[1].firstChild.data))
+        #html = html+("Step%s Action:%s Expected result:%s " % (str(i),parstring[0].firstChild.data,parstring[1].firstChild.data))
+        html = html + ("<DIV><b>Step %s</b><DIV><b>Description:</b>%s</DIV><DIV><b>Expected result:</b>%s</DIV></DIV>"
+                       % (str(i), parstring[0].firstChild.data, parstring[1].firstChild.data))
     return html
 
 def difference(test_case_id, test_case_rev):
-    diff_html = "Tob  DO"
+    old = parse_xml(test_case_id, str((int(test_case_rev) - 1))).splitlines()
+    new = parse_xml(test_case_id, test_case_rev).splitlines()
+    diff_html = difflib.HtmlDiff().make_file(old, new)
     return diff_html
 
 # print(parse_json(get_json_response(get_json_URL(test_case_id,test_case_rev))))
 # difference(test_case_id, test_case_rev)
 # print(parse_xml(test_case_id, test_case_rev))
+print( difference(test_case_id, test_case_rev))
