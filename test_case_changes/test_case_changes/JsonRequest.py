@@ -44,7 +44,10 @@ def parse_xml(test_case_id, test_case_rev):
     return html
 
 def difference(test_case_id, test_case_rev):
-    diff_html = "ToDO"
+    old = parse_xml(test_case_id, str((int(test_case_rev) - 1))).splitlines()
+    new = parse_xml(test_case_id, test_case_rev).splitlines()
+    diff_html = difflib.HtmlDiff().make_file(old, new)
+    print(diff_html)
     return diff_html
 
 # print(parse_json(get_json_response(get_json_URL(test_case_id,test_case_rev))))
