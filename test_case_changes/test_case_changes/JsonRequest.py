@@ -42,7 +42,7 @@ def parse_xml(test_case_id, test_case_rev):
     return html
 
 def difference(test_case_id, test_case_rev):
-    diff_html = "To DO"
+    diff_html = "Tob  DO"
     return diff_html
 
 # print(parse_json(get_json_response(get_json_URL(test_case_id,test_case_rev))))
