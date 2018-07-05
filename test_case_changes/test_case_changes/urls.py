@@ -18,6 +18,6 @@ from django.urls import path, re_path
 from specifying_data import views
 
 urlpatterns = [
-    path('index/', views.detail, name='index'),
+    path('home/', views.detail, name='home'),
     re_path('^response/?', views.response, name='response2'),
     path('admin/', admin.site.urls),]
