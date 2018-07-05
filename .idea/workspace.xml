@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79d273ac-d9f6-4be7-be10-4388f994b211" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IntelliLang.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_windows/git.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_windows/keymap.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_windows/laf.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/colors.scheme.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/conda_packages.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/debugger.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/diff.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/editor.codeinsight.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/filetypes.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web-browsers.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_case_changes/specifying_data/templates/test_case_change/style_template.html" afterPath="$PROJECT_DIR$/test_case_changes/specifying_data/templates/test_case_change/style_template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_case_changes/specifying_data/views.py" afterPath="$PROJECT_DIR$/test_case_changes/specifying_data/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_case_changes/test_case_changes/JsonRequest.py" afterPath="$PROJECT_DIR$/test_case_changes/test_case_changes/JsonRequest.py" />
     </list>
     <list id="f229fe28-e176-4921-886e-c37b820a01f7" name="Failed commit: Default" comment="edited response path and html" />
-    <ignored path=".idea/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,30 +29,38 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="JsonRequest.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JsonRequest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_case_changes/test_case_changes/JsonRequest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="46" column="75" lean-forward="true" selection-start-line="46" selection-start-column="75" selection-end-line="46" selection-end-column="75" />
+            <state relative-caret-position="323">
+              <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#485#619#0" expanded="false" />
-                <element signature="e#677#887#0" expanded="false" />
-                <element signature="e#1497#1548#0" expanded="false" />
-                <element signature="e#1601#1652#0" expanded="false" />
-                <element signature="e#2791#2940#0" expanded="false" />
+                <element signature="e#1506#1557#0" expanded="false" />
+                <element signature="e#1609#1660#0" expanded="false" />
+                <element signature="e#1701#1819#0" expanded="false" />
+                <element signature="e#1872#1923#0" expanded="false" />
+                <element signature="e#1976#2027#0" expanded="false" />
+                <element signature="e#2078#2235#0" expanded="false" />
+                <element signature="e#2285#3115#0" expanded="false" />
+                <element signature="e#3166#3990#0" expanded="false" />
+                <element signature="e#4042#4580#0" expanded="false" />
+                <element signature="e#4632#5478#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_case_changes/specifying_data/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+            <state relative-caret-position="255">
+              <caret line="15" column="67" lean-forward="false" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#468#816#0" expanded="false" />
+                <element signature="e#921#1558#0" expanded="false" />
+                <element signature="e#1585#2061#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -66,7 +81,7 @@
       <file leaf-file-name="style_template.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_case_changes/specifying_data/templates/test_case_change/style_template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="-718">
               <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
               <folding />
             </state>
@@ -85,13 +100,6 @@
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>&lt;del&gt;</find>
@@ -102,21 +110,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="PUSH_TAGS">
       <GitPushTagMode />
-    </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/test_case_changes/manage.py" />
-        <option value="$PROJECT_DIR$/test_case_changes/222.py" />
-        <option value="$PROJECT_DIR$/test_case_changes/test_case_changes/urls.py" />
-        <option value="C:/Program Files/python3_6/Lib/site-packages/lxml/html/diff.py" />
-        <option value="$PROJECT_DIR$/test_case_changes/specifying_data/templates/test_case_change/index.html" />
-        <option value="$PROJECT_DIR$/test_case_changes/test_case_changes/JsonRequest.py" />
-        <option value="$PROJECT_DIR$/test_case_changes/specifying_data/views.py" />
-        <option value="$PROJECT_DIR$/test_case_changes/specifying_data/templates/test_case_change/style_template.html" />
-      </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
@@ -159,32 +152,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestCaseParsingChanges" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestCaseParsingChanges" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test_case_changes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test_case_changes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestCaseParsingChanges" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestCaseParsingChanges" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test_case_changes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="specifying_data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
-  </component>
-  <component name="RunManager" selected="Python.JsonRequest">
-    <configuration default="false" name="JsonRequest" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case_changes/test_case_changes" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="TestCaseParsingChanges" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_case_changes/test_case_changes/JsonRequest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -319,20 +327,9 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Python.JsonRequest" />
-    </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.JsonRequest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
-  </component>
-  <component name="SvnConfiguration">
-    <configuration>C:\Users\h179355\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -440,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530715543721</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="final version 2.0">
+      <created>1530792928588</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1530792928588</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -451,9 +455,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39918947" sideWeight="0.5021739" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15400203" sideWeight="0.49565217" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48834854" sideWeight="0.49565217" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32928064" sideWeight="0.7298913" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.7298913" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -497,12 +501,13 @@
     <MESSAGE value="Valeri changes" />
     <MESSAGE value="First draft ready" />
     <MESSAGE value="final version 1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="final version 1.0" />
+    <MESSAGE value="final version 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="final version 2.0" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -513,11 +518,16 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#485#619#0" expanded="false" />
-            <element signature="e#677#887#0" expanded="false" />
-            <element signature="e#1497#1548#0" expanded="false" />
-            <element signature="e#1601#1652#0" expanded="false" />
-            <element signature="e#2791#2940#0" expanded="false" />
+            <element signature="e#1506#1557#0" expanded="false" />
+            <element signature="e#1609#1660#0" expanded="false" />
+            <element signature="e#1701#1819#0" expanded="false" />
+            <element signature="e#1872#1923#0" expanded="false" />
+            <element signature="e#1976#2027#0" expanded="false" />
+            <element signature="e#2078#2235#0" expanded="false" />
+            <element signature="e#2285#3115#0" expanded="false" />
+            <element signature="e#3166#3990#0" expanded="false" />
+            <element signature="e#4042#4580#0" expanded="false" />
+            <element signature="e#4632#5478#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -528,6 +538,9 @@
           <caret line="13" column="54" lean-forward="false" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#468#816#0" expanded="false" />
+            <element signature="e#921#1558#0" expanded="false" />
+            <element signature="e#1585#2061#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -546,11 +559,16 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#485#619#0" expanded="false" />
-            <element signature="e#677#887#0" expanded="false" />
-            <element signature="e#1497#1548#0" expanded="false" />
-            <element signature="e#1601#1652#0" expanded="false" />
-            <element signature="e#2791#2940#0" expanded="false" />
+            <element signature="e#1506#1557#0" expanded="false" />
+            <element signature="e#1609#1660#0" expanded="false" />
+            <element signature="e#1701#1819#0" expanded="false" />
+            <element signature="e#1872#1923#0" expanded="false" />
+            <element signature="e#1976#2027#0" expanded="false" />
+            <element signature="e#2078#2235#0" expanded="false" />
+            <element signature="e#2285#3115#0" expanded="false" />
+            <element signature="e#3166#3990#0" expanded="false" />
+            <element signature="e#4042#4580#0" expanded="false" />
+            <element signature="e#4632#5478#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -578,6 +596,9 @@
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#468#816#0" expanded="false" />
+            <element signature="e#921#1558#0" expanded="false" />
+            <element signature="e#1585#2061#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -596,11 +617,16 @@
           <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#485#619#0" expanded="false" />
-            <element signature="e#677#887#0" expanded="false" />
-            <element signature="e#1497#1548#0" expanded="false" />
-            <element signature="e#1601#1652#0" expanded="false" />
-            <element signature="e#2791#2940#0" expanded="false" />
+            <element signature="e#1506#1557#0" expanded="false" />
+            <element signature="e#1609#1660#0" expanded="false" />
+            <element signature="e#1701#1819#0" expanded="false" />
+            <element signature="e#1872#1923#0" expanded="false" />
+            <element signature="e#1976#2027#0" expanded="false" />
+            <element signature="e#2078#2235#0" expanded="false" />
+            <element signature="e#2285#3115#0" expanded="false" />
+            <element signature="e#3166#3990#0" expanded="false" />
+            <element signature="e#4042#4580#0" expanded="false" />
+            <element signature="e#4632#5478#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -628,11 +654,16 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#485#619#0" expanded="false" />
-            <element signature="e#677#887#0" expanded="false" />
-            <element signature="e#1497#1548#0" expanded="false" />
-            <element signature="e#1601#1652#0" expanded="false" />
-            <element signature="e#2791#2940#0" expanded="false" />
+            <element signature="e#1506#1557#0" expanded="false" />
+            <element signature="e#1609#1660#0" expanded="false" />
+            <element signature="e#1701#1819#0" expanded="false" />
+            <element signature="e#1872#1923#0" expanded="false" />
+            <element signature="e#1976#2027#0" expanded="false" />
+            <element signature="e#2078#2235#0" expanded="false" />
+            <element signature="e#2285#3115#0" expanded="false" />
+            <element signature="e#3166#3990#0" expanded="false" />
+            <element signature="e#4042#4580#0" expanded="false" />
+            <element signature="e#4632#5478#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -691,11 +722,16 @@
           <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#485#619#0" expanded="false" />
-            <element signature="e#677#887#0" expanded="false" />
-            <element signature="e#1497#1548#0" expanded="false" />
-            <element signature="e#1601#1652#0" expanded="false" />
-            <element signature="e#2791#2940#0" expanded="false" />
+            <element signature="e#1506#1557#0" expanded="false" />
+            <element signature="e#1609#1660#0" expanded="false" />
+            <element signature="e#1701#1819#0" expanded="false" />
+            <element signature="e#1872#1923#0" expanded="false" />
+            <element signature="e#1976#2027#0" expanded="false" />
+            <element signature="e#2078#2235#0" expanded="false" />
+            <element signature="e#2285#3115#0" expanded="false" />
+            <element signature="e#3166#3990#0" expanded="false" />
+            <element signature="e#4042#4580#0" expanded="false" />
+            <element signature="e#4632#5478#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -706,6 +742,9 @@
           <caret line="13" column="82" lean-forward="false" selection-start-line="13" selection-start-column="82" selection-end-line="13" selection-end-column="82" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#468#816#0" expanded="false" />
+            <element signature="e#921#1558#0" expanded="false" />
+            <element signature="e#1585#2061#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -726,11 +765,16 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#485#619#0" expanded="false" />
-            <element signature="e#677#887#0" expanded="false" />
-            <element signature="e#1497#1548#0" expanded="false" />
-            <element signature="e#1601#1652#0" expanded="false" />
-            <element signature="e#2791#2940#0" expanded="false" />
+            <element signature="e#1506#1557#0" expanded="false" />
+            <element signature="e#1609#1660#0" expanded="false" />
+            <element signature="e#1701#1819#0" expanded="false" />
+            <element signature="e#1872#1923#0" expanded="false" />
+            <element signature="e#1976#2027#0" expanded="false" />
+            <element signature="e#2078#2235#0" expanded="false" />
+            <element signature="e#2285#3115#0" expanded="false" />
+            <element signature="e#3166#3990#0" expanded="false" />
+            <element signature="e#4042#4580#0" expanded="false" />
+            <element signature="e#4632#5478#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -741,6 +785,9 @@
           <caret line="13" column="54" lean-forward="false" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#468#816#0" expanded="false" />
+            <element signature="e#921#1558#0" expanded="false" />
+            <element signature="e#1585#2061#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -759,11 +806,16 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#485#619#0" expanded="false" />
-            <element signature="e#677#887#0" expanded="false" />
-            <element signature="e#1497#1548#0" expanded="false" />
-            <element signature="e#1601#1652#0" expanded="false" />
-            <element signature="e#2791#2940#0" expanded="false" />
+            <element signature="e#1506#1557#0" expanded="false" />
+            <element signature="e#1609#1660#0" expanded="false" />
+            <element signature="e#1701#1819#0" expanded="false" />
+            <element signature="e#1872#1923#0" expanded="false" />
+            <element signature="e#1976#2027#0" expanded="false" />
+            <element signature="e#2078#2235#0" expanded="false" />
+            <element signature="e#2285#3115#0" expanded="false" />
+            <element signature="e#3166#3990#0" expanded="false" />
+            <element signature="e#4042#4580#0" expanded="false" />
+            <element signature="e#4632#5478#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -788,6 +840,9 @@
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#468#816#0" expanded="false" />
+            <element signature="e#921#1558#0" expanded="false" />
+            <element signature="e#1585#2061#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -806,11 +861,16 @@
           <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#485#619#0" expanded="false" />
-            <element signature="e#677#887#0" expanded="false" />
-            <element signature="e#1497#1548#0" expanded="false" />
-            <element signature="e#1601#1652#0" expanded="false" />
-            <element signature="e#2791#2940#0" expanded="false" />
+            <element signature="e#1506#1557#0" expanded="false" />
+            <element signature="e#1609#1660#0" expanded="false" />
+            <element signature="e#1701#1819#0" expanded="false" />
+            <element signature="e#1872#1923#0" expanded="false" />
+            <element signature="e#1976#2027#0" expanded="false" />
+            <element signature="e#2078#2235#0" expanded="false" />
+            <element signature="e#2285#3115#0" expanded="false" />
+            <element signature="e#3166#3990#0" expanded="false" />
+            <element signature="e#4042#4580#0" expanded="false" />
+            <element signature="e#4632#5478#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -835,11 +895,16 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#485#619#0" expanded="false" />
-            <element signature="e#677#887#0" expanded="false" />
-            <element signature="e#1497#1548#0" expanded="false" />
-            <element signature="e#1601#1652#0" expanded="false" />
-            <element signature="e#2791#2940#0" expanded="false" />
+            <element signature="e#1506#1557#0" expanded="false" />
+            <element signature="e#1609#1660#0" expanded="false" />
+            <element signature="e#1701#1819#0" expanded="false" />
+            <element signature="e#1872#1923#0" expanded="false" />
+            <element signature="e#1976#2027#0" expanded="false" />
+            <element signature="e#2078#2235#0" expanded="false" />
+            <element signature="e#2285#3115#0" expanded="false" />
+            <element signature="e#3166#3990#0" expanded="false" />
+            <element signature="e#4042#4580#0" expanded="false" />
+            <element signature="e#4632#5478#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -882,6 +947,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Program Files/python3_6/Lib/site-packages/lxml/html/diff.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="284" column="25" lean-forward="true" selection-start-line="284" selection-start-column="25" selection-end-line="284" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_case_changes/specifying_data/templates/test_case_change/style_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-718">
+          <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test_case_changes/specifying_data/templates/test_case_change/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -892,43 +973,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_case_changes/specifying_data/views.py">
+    <entry file="file://$PROJECT_DIR$/test_case_changes/test_case_changes/JsonRequest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        <state relative-caret-position="323">
+          <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#1506#1557#0" expanded="false" />
+            <element signature="e#1609#1660#0" expanded="false" />
+            <element signature="e#1701#1819#0" expanded="false" />
+            <element signature="e#1872#1923#0" expanded="false" />
+            <element signature="e#1976#2027#0" expanded="false" />
+            <element signature="e#2078#2235#0" expanded="false" />
+            <element signature="e#2285#3115#0" expanded="false" />
+            <element signature="e#3166#3990#0" expanded="false" />
+            <element signature="e#4042#4580#0" expanded="false" />
+            <element signature="e#4632#5478#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_case_changes/specifying_data/templates/test_case_change/style_template.html">
+    <entry file="file://$PROJECT_DIR$/test_case_changes/specifying_data/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/python3_6/Lib/site-packages/lxml/html/diff.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="284" column="25" lean-forward="true" selection-start-line="284" selection-start-column="25" selection-end-line="284" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_case_changes/test_case_changes/JsonRequest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="46" column="75" lean-forward="true" selection-start-line="46" selection-start-column="75" selection-end-line="46" selection-end-column="75" />
+        <state relative-caret-position="255">
+          <caret line="15" column="67" lean-forward="false" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#485#619#0" expanded="false" />
-            <element signature="e#677#887#0" expanded="false" />
-            <element signature="e#1497#1548#0" expanded="false" />
-            <element signature="e#1601#1652#0" expanded="false" />
-            <element signature="e#2791#2940#0" expanded="false" />
+            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#468#816#0" expanded="false" />
+            <element signature="e#921#1558#0" expanded="false" />
+            <element signature="e#1585#2061#0" expanded="false" />
           </folding>
         </state>
       </provider>
