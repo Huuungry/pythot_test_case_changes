@@ -16,10 +16,14 @@ import test_case_changes.credentials
 LOGIN = test_case_changes.credentials.get_login()
 PASSWORD = test_case_changes.credentials.get_password()
 
-
 def get_json_URL(test_case_id, test_case_rev):
     json_URL = "http://tfs:8080/tfs/IMPT/_apis/wit/workitems/" + test_case_id + "/revisions/" + test_case_rev + "?v_5"
     return json_URL
+
+def get_work_item_type(test_case_id):
+    parsed_t_c = json.loads(get_json_response(test_case_id, ''))
+    workitem_type = parsed_t_c['value'][0]['fields']['System.WorkItemType']
+    return workitem_type
 
 def get_json_response(test_case_id, test_case_rev):
     json_URL = get_json_URL(test_case_id, test_case_rev)
@@ -37,8 +41,15 @@ def get_t_c_data(test_case_id, test_case_rev):
 
 def get_t_c_id(test_case_id, test_case_rev):
     return get_t_c_data(test_case_id, test_case_rev)[0]
+
 def get_t_c_rev(test_case_id, test_case_rev):
     return get_t_c_data(test_case_id, test_case_rev)[1]
+
+def get_t_c_max_rev(test_case_id):
+    parsed_t_c = json.loads(get_json_response(test_case_id, ''))
+    rev_max = parsed_t_c['count']
+    return str(rev_max)
+
 def get_t_c_name(test_case_id, test_case_rev):
     return get_t_c_data(test_case_id, test_case_rev)[2]
 def get_t_c_state(test_case_id, test_case_rev):
@@ -114,3 +125,6 @@ def difference2(test_case_id, test_case_rev):
         return diff_html
 
 # print(parse_xml("409770","11"))
+
+
+# print(get_t_c_rev("409770","32"))
