@@ -3,6 +3,7 @@ import difflib
 import requests
 import json
 import bs4
+import re
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
 from lxml.html.diff import htmldiff
@@ -67,9 +68,23 @@ def parse_xml(test_case_id, test_case_rev):
 
 def parse_html(test_case_id, test_case_rev):
     soup = bs4.BeautifulSoup(parse_xml(test_case_id, test_case_rev), "html.parser")
-    #results = {} TOOODOOOOO
+    d = {}
+    list = soup.find_all('form')
+    for list_element in list:
+        # tag = list_element.find('form')
+        step = list_element.find('b', text=re.compile("Step"))
+        description = list_element.find('b', text=re.compile('Description:'))
+        ar = list_element.find_all('p')
+        ar_step = ''
+        for ar_element in ar:
+            ar_step = ar_step + ar_element.text
+        expected_result = list_element.find('b', text=re.compile('Expected result:'))
+        er = list_element.find('b', text=re.compile('Expected result:')).next_sibling
+        d = {step.text, ar_step, er.text}
+        # print(step.text, '\n', description.text, '\n', ar_step, '\n', expected_result.text, '\n', er.text)
+    print(d)
+    return d
 
-    return soup.get_text(separator=" ")
 
 def difference(test_case_id, test_case_rev):
     old = parse_html(test_case_id, str((int(test_case_rev) - 1))).splitlines()
