@@ -37,7 +37,8 @@ def get_t_c_data(test_case_id, test_case_rev):
     t_c_rev = parsed_t_c_id['rev']
     t_c_name = parsed_t_c_id['fields']['System.Title']
     t_c_state = parsed_t_c_id['fields']['System.State']
-    return t_c_id, t_c_rev, t_c_name, t_c_state
+    t_c_changed_by = parsed_t_c_id['fields']['System.ChangedBy']
+    return t_c_id, t_c_rev, t_c_name, t_c_state,  t_c_changed_by
 
 def get_t_c_id(test_case_id, test_case_rev):
     return get_t_c_data(test_case_id, test_case_rev)[0]
@@ -52,8 +53,12 @@ def get_t_c_max_rev(test_case_id):
 
 def get_t_c_name(test_case_id, test_case_rev):
     return get_t_c_data(test_case_id, test_case_rev)[2]
+
 def get_t_c_state(test_case_id, test_case_rev):
     return get_t_c_data(test_case_id, test_case_rev)[3]
+
+def get_t_c__changed_by(test_case_id, test_case_rev):
+    return get_t_c_data(test_case_id, test_case_rev)[4]
 
 def parse_json(test_case_id, test_case_rev):
     parsed_lib = json.loads(get_json_response(test_case_id, test_case_rev))
@@ -77,25 +82,28 @@ def parse_xml(test_case_id, test_case_rev):
             pass
     return html
 
+# def parse_html(test_case_id, test_case_rev):
+#     soup = bs4.BeautifulSoup(parse_xml(test_case_id, test_case_rev), "html.parser")
+#     d = {}
+#     list = soup.find_all('form')
+#     for list_element in list:
+#         step = list_element.findChildren()[1]
+#         description = list_element.findChildren()[2]
+#         expected_result = list_element.findChildren()[2].next_sibling
+#         d[step.text]=[description.text, expected_result.text]
+#     return d
 def parse_html(test_case_id, test_case_rev):
     soup = bs4.BeautifulSoup(parse_xml(test_case_id, test_case_rev), "html.parser")
     d = {}
     list = soup.find_all('form')
     for list_element in list:
-        # tag = list_element.find('form')
-        step = list_element.find('b', text=re.compile("Step"))
-        description = list_element.find('b', text=re.compile('Description:'))
-        ar = list_element.find_all('p')
-        ar_step = ''
-        for ar_element in ar:
-            ar_step = ar_step + ar_element.text
-        expected_result = list_element.find('b', text=re.compile('Expected result:'))
-        er = list_element.find('b', text=re.compile('Expected result:')).next_sibling
-        d = {step.text, ar_step, er.text}
-        # print(step.text, '\n', description.text, '\n', ar_step, '\n', expected_result.text, '\n', er.text)
-    print(d)
+        step = list_element.findChildren()[1]
+        ar = list_element.findChildren()[2]
+        er = list_element.findChildren()[2].next_sibling
+        # print(step.text, ar.text, er.text)
+        d[step.text]=[ar.text, er.text]
+    # print(d)
     return d
-
 
 def difference(test_case_id, test_case_rev):
     old = parse_html(test_case_id, str((int(test_case_rev) - 1))).splitlines()
@@ -128,3 +136,5 @@ def difference2(test_case_id, test_case_rev):
 
 
 # print(get_t_c_rev("409770","32"))
+
+# print(parse_html("446114 ", "18"))
