@@ -11,7 +11,7 @@ from lxml.html.diff import htmldiff
 # import credentials
 # LOGIN = credentials.get_login()
 # PASSWORD = credentials.get_password()
-
+#
 import test_case_changes.credentials
 LOGIN = test_case_changes.credentials.get_login()
 PASSWORD = test_case_changes.credentials.get_password()
@@ -31,6 +31,16 @@ def get_json_response(test_case_id, test_case_rev):
     json_response = r.content.decode('utf-8')
     return json_response
 
+def get_rev_max(test_case_id):
+    parsed_t_c = json.loads(get_json_response(test_case_id, ''))
+    rev_max = parsed_t_c['count']
+    return rev_max
+
+def get_workitem_type(test_case_id):
+    parsed_t_c = json.loads(get_json_response(test_case_id, ''))
+    workitem_type = parsed_t_c['value'][0]['fields']['System.WorkItemType']
+    return workitem_type
+
 def get_t_c_data(test_case_id, test_case_rev):
     parsed_t_c_id = json.loads(get_json_response(test_case_id, test_case_rev))
     t_c_id = parsed_t_c_id['id']
@@ -38,7 +48,7 @@ def get_t_c_data(test_case_id, test_case_rev):
     t_c_name = parsed_t_c_id['fields']['System.Title']
     t_c_state = parsed_t_c_id['fields']['System.State']
     t_c_changed_by = parsed_t_c_id['fields']['System.ChangedBy']
-    return t_c_id, t_c_rev, t_c_name, t_c_state,  t_c_changed_by
+    return t_c_id, t_c_rev, t_c_name, t_c_state, t_c_changed_by
 
 def get_t_c_id(test_case_id, test_case_rev):
     return get_t_c_data(test_case_id, test_case_rev)[0]
@@ -82,16 +92,6 @@ def parse_xml(test_case_id, test_case_rev):
             pass
     return html
 
-# def parse_html(test_case_id, test_case_rev):
-#     soup = bs4.BeautifulSoup(parse_xml(test_case_id, test_case_rev), "html.parser")
-#     d = {}
-#     list = soup.find_all('form')
-#     for list_element in list:
-#         step = list_element.findChildren()[1]
-#         description = list_element.findChildren()[2]
-#         expected_result = list_element.findChildren()[2].next_sibling
-#         d[step.text]=[description.text, expected_result.text]
-#     return d
 def parse_html(test_case_id, test_case_rev):
     soup = bs4.BeautifulSoup(parse_xml(test_case_id, test_case_rev), "html.parser")
     d = {}
@@ -100,7 +100,6 @@ def parse_html(test_case_id, test_case_rev):
         step = list_element.findChildren()[1]
         ar = list_element.findChildren()[2]
         er = list_element.findChildren()[2].next_sibling
-        # print(step.text, ar.text, er.text)
         d[step.text]=[ar.text, er.text]
     # print(d)
     return d
@@ -108,8 +107,6 @@ def parse_html(test_case_id, test_case_rev):
 def difference(test_case_id, test_case_rev):
     old = parse_html(test_case_id, str((int(test_case_rev) - 1))).splitlines()
     new = parse_html(test_case_id, test_case_rev).splitlines()
-
-    #print (old, new)
     diff_html = difflib.HtmlDiff()\
         .make_file(old, new, fromdesc='T-C %sRevision %s'%(test_case_id, str((int(test_case_rev) - 1))),
                    todesc='T-C %sRevision %s'%(test_case_id, test_case_rev))
@@ -131,6 +128,10 @@ def difference2(test_case_id, test_case_rev):
         diff_html=diff_html.replace("<ins>","<ins><font color=green>")
         diff_html=diff_html.replace("</ins>","</ins></font>")
         return diff_html
+
+
+print(parse_html("409770","12"))
+# print(get_workitem_type("409770"))
 
 # print(parse_xml("409770","11"))
 
