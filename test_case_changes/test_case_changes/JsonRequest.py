@@ -8,13 +8,13 @@ from xml.dom import minidom
 import xml.etree.ElementTree as ET
 from lxml.html.diff import htmldiff
 
-# import credentials
-# LOGIN = credentials.get_login()
-# PASSWORD = credentials.get_password()
+import credentials
+LOGIN = credentials.get_login()
+PASSWORD = credentials.get_password()
 #
-import test_case_changes.credentials
-LOGIN = test_case_changes.credentials.get_login()
-PASSWORD = test_case_changes.credentials.get_password()
+# import test_case_changes.credentials
+# LOGIN = test_case_changes.credentials.get_login()
+# PASSWORD = test_case_changes.credentials.get_password()
 
 def get_json_URL(test_case_id, test_case_rev):
     json_URL = "http://tfs:8080/tfs/IMPT/_apis/wit/workitems/" + test_case_id + "/revisions/" + test_case_rev + "?v_5"
@@ -98,15 +98,15 @@ def parse_html(test_case_id, test_case_rev):
     list = soup.find_all('form')
     for list_element in list:
         step = list_element.findChildren()[1]
-        ar = list_element.findChildren()[2]
-        er = list_element.findChildren()[2].next_sibling
-        d[step.text]=[ar.text, er.text]
+        description = list_element.findChildren()[2]
+        actual_result = list_element.findChildren()[2].next_sibling
+        d[step.text]=[description.text, actual_result.text]
     # print(d)
     return d
 
 def difference(test_case_id, test_case_rev):
-    old = parse_html(test_case_id, str((int(test_case_rev) - 1))).splitlines()
-    new = parse_html(test_case_id, test_case_rev).splitlines()
+    old = parse_html(test_case_id, str((int(test_case_rev) - 1)))
+    new = parse_html(test_case_id, test_case_rev)
     diff_html = difflib.HtmlDiff()\
         .make_file(old, new, fromdesc='T-C %sRevision %s'%(test_case_id, str((int(test_case_rev) - 1))),
                    todesc='T-C %sRevision %s'%(test_case_id, test_case_rev))
@@ -130,7 +130,8 @@ def difference2(test_case_id, test_case_rev):
         return diff_html
 
 
-print(parse_html("409770","12"))
+print(parse_html("446114","18"))
+# print(difference("409770","12"))
 # print(get_workitem_type("409770"))
 
 # print(parse_xml("409770","11"))
