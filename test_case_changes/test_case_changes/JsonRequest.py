@@ -8,13 +8,13 @@ from xml.dom import minidom
 import xml.etree.ElementTree as ET
 from lxml.html.diff import htmldiff
 
-import credentials
-LOGIN = credentials.get_login()
-PASSWORD = credentials.get_password()
+# import credentials
+# LOGIN = credentials.get_login()
+# PASSWORD = credentials.get_password()
 #
-# import test_case_changes.credentials
-# LOGIN = test_case_changes.credentials.get_login()
-# PASSWORD = test_case_changes.credentials.get_password()
+import test_case_changes.credentials
+LOGIN = test_case_changes.credentials.get_login()
+PASSWORD = test_case_changes.credentials.get_password()
 
 def get_json_URL(test_case_id, test_case_rev):
     json_URL = "http://tfs:8080/tfs/IMPT/_apis/wit/workitems/" + test_case_id + "/revisions/" + test_case_rev + "?v_5"
