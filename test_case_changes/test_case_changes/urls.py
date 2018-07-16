@@ -19,5 +19,6 @@ from specifying_data import views
 
 urlpatterns = [
     path('home/', views.detail, name='home'),
-    re_path('^response/?', views.response, name='response2'),
+    path('index/', views.detail, name='index'),
+    re_path('^response/?', views.response2, name='response2'),
     path('admin/', admin.site.urls),]

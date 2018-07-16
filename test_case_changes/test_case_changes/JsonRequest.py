@@ -3,26 +3,27 @@ import difflib
 import requests
 import json
 import bs4
-import re
 from xml.dom import minidom
-import xml.etree.ElementTree as ET
 from lxml.html.diff import htmldiff
 
 # import credentials
 # LOGIN = credentials.get_login()
 # PASSWORD = credentials.get_password()
 
-import test_case_changes.credentials
-LOGIN = test_case_changes.credentials.get_login()
-PASSWORD = test_case_changes.credentials.get_password()
+import test_case_changes.credentials as credls
+LOGIN = credls.get_login()
+PASSWORD = credls.get_password()
 
 def get_json_URL(test_case_id, test_case_rev):
-    json_URL = "http://tfs:8080/tfs/IMPT/_apis/wit/workitems/" + test_case_id + "/revisions/" + test_case_rev + "?v_5"
+    if test_case_rev == '':
+        json_URL = "http://tfs:8080/tfs/IMPT/_apis/wit/workitems/" + test_case_id
+    else:
+        json_URL = "http://tfs:8080/tfs/IMPT/_apis/wit/workitems/" + test_case_id + "/revisions/" + test_case_rev + "?v_5"
     return json_URL
 
 def get_work_item_type(test_case_id):
     parsed_t_c = json.loads(get_json_response(test_case_id, ''))
-    workitem_type = parsed_t_c['value'][0]['fields']['System.WorkItemType']
+    workitem_type = parsed_t_c['fields']['System.WorkItemType']
     return workitem_type
 
 def get_json_response(test_case_id, test_case_rev):
@@ -48,7 +49,7 @@ def get_t_c_rev(test_case_id, test_case_rev):
 
 def get_t_c_max_rev(test_case_id):
     parsed_t_c = json.loads(get_json_response(test_case_id, ''))
-    rev_max = parsed_t_c['count']
+    rev_max = parsed_t_c['rev']
     return str(rev_max)
 
 def get_t_c_name(test_case_id, test_case_rev):
@@ -82,27 +83,15 @@ def parse_xml(test_case_id, test_case_rev):
             pass
     return html
 
-# def parse_html(test_case_id, test_case_rev):
-#     soup = bs4.BeautifulSoup(parse_xml(test_case_id, test_case_rev), "html.parser")
-#     d = {}
-#     list = soup.find_all('form')
-#     for list_element in list:
-#         step = list_element.findChildren()[1]
-#         description = list_element.findChildren()[2]
-#         expected_result = list_element.findChildren()[2].next_sibling
-#         d[step.text]=[description.text, expected_result.text]
-#     return d
 def parse_html(test_case_id, test_case_rev):
     soup = bs4.BeautifulSoup(parse_xml(test_case_id, test_case_rev), "html.parser")
     d = {}
     list = soup.find_all('form')
     for list_element in list:
         step = list_element.findChildren()[1]
-        ar = list_element.findChildren()[2]
-        er = list_element.findChildren()[2].next_sibling
-        # print(step.text, ar.text, er.text)
-        d[step.text]=[ar.text, er.text]
-    # print(d)
+        description = list_element.findChildren()[2]
+        expected_result = list_element.findChildren()[2].next_sibling
+        d[step.text]=[description.text, expected_result.text]
     return d
 
 def difference(test_case_id, test_case_rev):
